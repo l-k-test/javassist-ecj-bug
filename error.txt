@@ -1,0 +1,82 @@
+java.lang.VerifyError: Stack map does not match the one at exception handler 103
+Exception Details:
+  Location:
+    javassist_ecj_bug/PowerMockJavassistTest.test1()V @103: astore_2
+  Reason:
+    Type 'java/lang/Object' (current frame, locals[1]) is not assignable to null (stack map, locals[1])
+  Current Frame:
+    bci: @92
+    flags: { }
+    locals: { 'javassist_ecj_bug/PowerMockJavassistTest', 'java/lang/Object', top, top, null, 'java/lang/Object', 'java/lang/Object' }
+    stack: { 'java/lang/Throwable' }
+  Stackmap Frame:
+    bci: @103
+    flags: { }
+    locals: { 'javassist_ecj_bug/PowerMockJavassistTest', null, null, top, null, 'java/lang/Object', 'java/lang/Object' }
+    stack: { 'java/lang/Throwable' }
+  Bytecode:
+    0x0000000: 2a12 2e03 bd00 0312 2fb8 0035 1237 b800
+    0x0000010: 3d4c 2b01 3a04 013a 0519 0412 50b8 0047
+    0x0000020: 1251 1252 b800 55b8 0059 3a06 1906 b200
+    0x0000030: 41a6 000b b200 413a 05a7 000a 1906 c000
+    0x0000040: 033a 0519 05a5 0004 b101 4c01 4db8 0014
+    0x0000050: 4e2d c600 712d b600 18a7 006a 0000 a7ff
+    0x0000060: fe00 a7ff ff00 bf4d 2bc7 0008 2c4c a700
+    0x0000070: 532b 2ca5 004e 2b2c 3a05 3a04 013a 0719
+    0x0000080: 0401 a500 0a19 043a 07a7 000a 125b b800
+    0x0000090: 473a 0719 0712 5c04 bd00 0359 0319 0553
+    0x00000a0: 125d b800 3512 37b8 003d 3a08 1908 b200
+    0x00000b0: 41a6 0010 1904 1905 b600 1d01 3a06 a700
+    0x00000c0: 032b bfb1
+  Exception Handler Table:
+    bci [77, 103] => handler: 103
+  Stackmap Table:
+    full_frame(@60,{Object[#1],Object[#3],Top,Top,Null,Null,Object[#3]},{Object[#3]})
+    full_frame(@67,{Object[#1],Object[#3],Top,Top,Null,Object[#3],Object[#3]},{Object[#3]})
+    same_frame(@73)
+    same_frame(@92)
+    same_frame(@97)
+    full_frame(@101,{Object[#1],Object[#3],Top,Top,Null,Null,Object[#3]},{Object[#30]})
+    full_frame(@103,{Object[#1],Null,Null,Top,Null,Object[#3],Object[#3]},{Object[#30]})
+    full_frame(@113,{Object[#1],Null,Object[#30],Top,Null,Object[#3],Object[#3]},{})
+    full_frame(@140,{Object[#1],Null,Object[#30],Top,Null,Object[#30],Object[#3],Null},{})
+    full_frame(@147,{Object[#1],Null,Object[#30],Top,Null,Object[#30],Object[#3],Object[#95]},{})
+    full_frame(@193,{Object[#1],Object[#30],Object[#30],Top,Null,Object[#3],Object[#3]},{})
+    full_frame(@195,{Object[#1],Null,Null,Object[#25],Null,Object[#3],Object[#3]},{})
+
+        at java.lang.Class.getDeclaredMethods0(Native Method)
+        at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+        at java.lang.Class.privateGetPublicMethods(Class.java:2902)
+        at java.lang.Class.getMethods(Class.java:1615)
+        at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.getTestMethods(PowerMockJUnit44RunnerDelegateImpl.java:109)
+        at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.<init>(PowerMockJUnit44RunnerDelegateImpl.java:85)
+        at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl.<init>(PowerMockJUnit47RunnerDelegateImpl.java:42)
+        at org.powermock.modules.junit4.internal.impl.PowerMockJUnit49RunnerDelegateImpl.<init>(PowerMockJUnit49RunnerDelegateImpl.java:25)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.createDelegatorFromClassloader(JUnit4TestSuiteChunkerImpl.java:172)
+        at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.createDelegatorFromClassloader(JUnit4TestSuiteChunkerImpl.java:48)
+        at org.powermock.tests.utils.impl.AbstractTestSuiteChunkerImpl.createTestDelegators(AbstractTestSuiteChunkerImpl.java:108)
+        at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.<init>(JUnit4TestSuiteChunkerImpl.java:71)
+        at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.<init>(AbstractCommonPowerMockRunner.java:36)
+        at org.powermock.modules.junit4.PowerMockRunner.<init>(PowerMockRunner.java:34)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+        at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+        at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+        at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+        at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+        at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+        at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+        at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+        at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+        at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
