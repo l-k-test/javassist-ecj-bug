@@ -17,3 +17,5 @@ But combining the eclipse compiler with PowerMock (<code>mvn clean test -Ppmock,
 <pre>
 java.lang.VerifyError: Stack map does not match the one at exception handler 103
 </pre>
+
+The full verification error can be found in error.txt
