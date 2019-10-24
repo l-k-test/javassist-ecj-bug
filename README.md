@@ -5,15 +5,15 @@ The project contains 2 tests: JUnitJavassistTest and PowerMockJavassistTest.
 The only difference between them is that PowerMockJavassistTest has <code>PowerMockRunner.class</code> annotation,
 so some javassist bytecode manipulation is performed.
 
-Running 'mvn test' executes JUnitJavassistTest.
-PowerMockJavassistTest is activated with pmock maven profile: 'mvn clean install -Ppmock'.
+Running <code>mvn clean test</code> executes JUnitJavassistTest.
+PowerMockJavassistTest is activated with pmock maven profile: <code>mvn clean test -Ppmock</code>.
 Both commands complete successfully.
 
 The project can also use the eclipse compiler instead of the default JDK compiler.
-The eclipse compiler is activated with ecj maven profile: 'mvn clean install -Pecj'.
+The eclipse compiler is activated with ecj maven profile: <code>mvn clean test -Pecj</code>.
 This command completes successfully.
 
-But combining the eclipse compiler with PowerMock ('mvn clean install -Pecj,pmock') fails with:
+But combining the eclipse compiler with PowerMock (<code>mvn clean test -Ppmock,ecj</code>) fails with:
 <pre>
 java.lang.VerifyError: Stack map does not match the one at exception handler 103
 </pre>
